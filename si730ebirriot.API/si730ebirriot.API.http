@@ -1,0 +1,6 @@
+@si730ebirriot.API_HostAddress = http://localhost:5230
+
+GET {{si730ebirriot.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
