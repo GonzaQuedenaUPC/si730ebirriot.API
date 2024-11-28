@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
+using si730ebirriot.API.Inventory.Domain.Model.Aggregates;
 using si730ebirriot.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
 namespace si730ebirriot.API.Shared.Infrastructure.Persistence.EFC.Configuration;
@@ -42,6 +43,24 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
       base.OnModelCreating(builder);
       
       // Bounded Contexts
+      
+      // Inventory Bounded Context
+      builder.Entity<Thing>().HasKey(i => i.Id);
+      builder.Entity<Thing>().Property(i => i.Id).ValueGeneratedOnAdd();
+      
+      builder.Entity<Thing>().OwnsOne(i => i.SerialNumber, n =>
+      {
+         n.WithOwner().HasForeignKey("Id");
+         n.Property(i => i.Identifier).HasColumnName("SerialNumber");
+      });
+
+      builder.Entity<Thing>().Property(i => i.Model).IsRequired();
+      
+      builder.Entity<Thing>().Ignore(i => i.OperationModeString);
+      builder.Entity<Thing>().Property(i => i.OperationMode).HasConversion<string>().IsRequired();
+      
+      builder.Entity<Thing>().Property(i => i.MaximumTemperatureThreshold).IsRequired();
+      builder.Entity<Thing>().Property(i => i.MinimumTemperatureThreshold).IsRequired();
       
       // Apply snake case naming convention
       builder.UseSnakeCaseNamingConvention();
