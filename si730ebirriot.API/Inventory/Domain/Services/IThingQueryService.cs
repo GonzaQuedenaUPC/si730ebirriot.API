@@ -17,5 +17,5 @@ public interface IThingQueryService
     /// <returns>
     /// The Thing with the given ID.
     /// </returns>
-    Task<Thing> Handle(GetThingByIdQuery query);
+    Task<Thing?> Handle(GetThingByIdQuery query);
 }
