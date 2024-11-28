@@ -2,7 +2,7 @@
 
 public record SerialNumber(Guid Identifier)
 {
-    public SerialNumber() : this(Guid.NewGuid())
+    public SerialNumber(string serialNumber) : this(Guid.Parse(serialNumber))
     {
     }
 }

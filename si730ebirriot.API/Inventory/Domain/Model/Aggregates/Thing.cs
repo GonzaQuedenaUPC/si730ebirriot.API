@@ -46,7 +46,6 @@ public partial class Thing
         Model = "";
         MaximumTemperatureThreshold = 0;
         MinimumTemperatureThreshold = 0;
-        SerialNumber = new SerialNumber();
         OperationMode = EOperationMode.ScheduleDriven;
     }
 
@@ -58,6 +57,7 @@ public partial class Thing
     /// </param>
     public Thing(CreateThingCommand command) : this()
     {
+        SerialNumber = new SerialNumber(command.SerialNumber);
         this.Model = command.Model;
         this.MaximumTemperatureThreshold = command.MaximumTemperatureThreshold;
         this.MinimumTemperatureThreshold = command.MinimumTemperatureThreshold;

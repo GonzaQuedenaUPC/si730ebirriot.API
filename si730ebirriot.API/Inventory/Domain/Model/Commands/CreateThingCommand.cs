@@ -13,4 +13,4 @@
 /// The minimum temperature threshold of the Thing.
 /// </param>
 public record CreateThingCommand(string Model, 
-    decimal MaximumTemperatureThreshold, decimal MinimumTemperatureThreshold);
+    decimal MaximumTemperatureThreshold, decimal MinimumTemperatureThreshold, string SerialNumber);
