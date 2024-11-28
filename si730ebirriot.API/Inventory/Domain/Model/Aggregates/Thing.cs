@@ -47,7 +47,7 @@ public partial class Thing
         MaximumTemperatureThreshold = 0;
         MinimumTemperatureThreshold = 0;
         SerialNumber = new SerialNumber();
-        OperationMode = EOperationMode.SCHEDULE_DRIVEN;
+        OperationMode = EOperationMode.ScheduleDriven;
     }
 
     /// <summary>
