@@ -19,15 +19,4 @@ public interface IThingRepository : IBaseRepository<Thing>
     /// True if the Thing exists, false otherwise.
     /// </returns>
     Task<bool> ExistsBySerialNumberAsync(SerialNumber serialNumber);
-    
-    /// <summary>
-    /// Obtains a Thing by its id number.
-    /// </summary>
-    /// <param name="id">
-    /// The id of the Thing.
-    /// </param>
-    /// <returns>
-    /// The Thing with the given id.
-    /// </returns>
-    Task<Thing?> FindByThingIdAsync(int id);
 }
