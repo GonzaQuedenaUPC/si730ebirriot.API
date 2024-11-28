@@ -28,5 +28,5 @@ public interface IThingRepository
     /// <returns>
     /// The Thing with the given id.
     /// </returns>
-    Task<Thing> GetByIdAsync(int id);
+    Task<Thing?> FindByThingIdAsync(int id);
 }
