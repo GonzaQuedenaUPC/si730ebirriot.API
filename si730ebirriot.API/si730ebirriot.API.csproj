@@ -32,6 +32,16 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Inventory\Interfaces\ACL\" />
+      <Folder Include="Observability\Application\Internal\CommandServices\" />
+      <Folder Include="Observability\Domain\Model\Aggregates\" />
+      <Folder Include="Observability\Domain\Model\Commands\" />
+      <Folder Include="Observability\Domain\Model\Queries\" />
+      <Folder Include="Observability\Domain\Model\ValueObjects\" />
+      <Folder Include="Observability\Domain\Repositories\" />
+      <Folder Include="Observability\Domain\Services\" />
+      <Folder Include="Observability\Infrastructure\Persistence\EFC\Repositories\" />
+      <Folder Include="Observability\Interface\REST\" />
       <Folder Include="Shared\Infrastructure\Interfaces\" />
     </ItemGroup>
 </Project>
