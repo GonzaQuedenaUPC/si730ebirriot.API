@@ -3,6 +3,7 @@ using si730ebirriot.API.Inventory.Domain.Model.Commands;
 using si730ebirriot.API.Inventory.Domain.Model.ValueObjects;
 using si730ebirriot.API.Inventory.Domain.Repositories;
 using si730ebirriot.API.Inventory.Domain.Services;
+using si730ebirriot.API.Shared.Domain.Repositories;
 using si730ebirriot.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 namespace si730ebirriot.API.Inventory.Application.Internal.CommandServices;
@@ -16,7 +17,7 @@ namespace si730ebirriot.API.Inventory.Application.Internal.CommandServices;
 /// <param name="unitOfWork">
 /// The unit of work.
 /// </param>
-public class ThingCommandService(IThingRepository thingRepository, UnitOfWork unitOfWork)
+public class ThingCommandService(IThingRepository thingRepository, IUnitOfWork unitOfWork)
     : IThingCommandService
 {
     /// <summary>

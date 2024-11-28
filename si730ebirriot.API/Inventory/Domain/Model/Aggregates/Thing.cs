@@ -29,6 +29,11 @@ public partial class Thing
     public EOperationMode OperationMode { get; set; }
     
     /// <summary>
+    /// Returns the OperationMode as a string.
+    /// </summary>
+    public string OperationModeString => OperationMode.ToString();
+    
+    /// <summary>
     /// Maximum temperature threshold of the Thing
     /// </summary>
     public decimal MaximumTemperatureThreshold { get; set; }
