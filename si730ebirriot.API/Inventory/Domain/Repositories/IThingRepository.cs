@@ -1,12 +1,13 @@
 ﻿using si730ebirriot.API.Inventory.Domain.Model.Aggregates;
 using si730ebirriot.API.Inventory.Domain.Model.ValueObjects;
+using si730ebirriot.API.Shared.Domain.Repositories;
 
 namespace si730ebirriot.API.Inventory.Domain.Repositories;
 
 /// <summary>
 /// Repository for Things.
 /// </summary>
-public interface IThingRepository
+public interface IThingRepository : IBaseRepository<Thing>
 {
     /// <summary>
     /// Verifies if a Thing exists by its serial number.
